@@ -72,6 +72,8 @@ public class ControladorPersonas {
                 if (rowSelected != -1) {
                     vista.getBtnEditar().setEnabled(true);
                     vista.getBtnRemover().setEnabled(true);
+                    vista.getBtnCrear().setEnabled(false);
+                    vista.getBtnConsultar().setEnabled(false);
                     
                     vista.getTxtId().setText(String.valueOf(vista.getTbPersona().getValueAt(rowSelected, 0)));
                     vista.getTxtId().setEditable(false);
@@ -91,8 +93,9 @@ public class ControladorPersonas {
                     
                     vista.getTxtCorreo().setText(String.valueOf(vista.getTbPersona().getValueAt(rowSelected, 9)));
                     vista.getJdcFecha().setDate((java.util.Date) vista.getTbPersona().getValueAt(rowSelected, 10));
-                    vista.getBtnConsultar().setEnabled(false);
+                    
                 } else {
+                    vista.getBtnCrear().setEnabled(true);
                     vista.getBtnConsultar().setEnabled(true);
                 }
                    
