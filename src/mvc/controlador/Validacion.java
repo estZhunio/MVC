@@ -2,6 +2,7 @@ package mvc.controlador;
 
 import javax.swing.JOptionPane;
 import mvc.vista.VistaPersona;
+import mvc.vista.VistaProducto;
 
 /**
  *
@@ -51,11 +52,22 @@ public class Validacion {
             JOptionPane.showMessageDialog(vista, "CORREO INCORRECTO");
             return false;
         }
-        
-        if (vista.getLbFoto().getIcon() == null) {
-            ControladorPersonas.IniciarPhoto();           
-                   
+
+        return true;
+    }
+    
+    public static boolean validarProducto(VistaProducto vista) {
+        if (!(vista.getTxtNombre().getText().matches("^[A-Z][a-zA-Z]{0,49}$"))) {
+            JOptionPane.showMessageDialog(vista, "NOMBRE INCORRECTO");
+            return false;
         }
+        
+        if (!(vista.getTxtPrecio().getText().matches("^\\d+(\\.\\d{1,2})?$"))) {
+            JOptionPane.showMessageDialog(vista, "PRECIO INCORRECTO, \"RECUERDE ESTE CAMPO RECIBE VALORES NUMERICOS CON 2 DECIMALES\"");
+            return false;
+        }
+        
+        
         
         return true;
     }

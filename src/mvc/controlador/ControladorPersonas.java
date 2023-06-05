@@ -1,4 +1,4 @@
-package mvc.controlador;
+ package mvc.controlador;
 
 import java.awt.Image;
 
@@ -22,6 +22,8 @@ import javax.swing.table.DefaultTableModel;
 import mvc.modelo.ModeloPersona;
 import mvc.modelo.Persona;
 import mvc.vista.VistaPersona;
+
+ 
 
 /**
  *
@@ -50,15 +52,15 @@ public class ControladorPersonas {
         vista.getBtnRemover().setEnabled(false);
         
         
-        vista.getBtnEscoger().addActionListener(e -> { escogerFoto();} );
+        vista.getBtnEscoger().addActionListener(e -> escogerFoto());
        
-        vista.getBtnCrear().addActionListener(e -> {crearPersona();});  
+        vista.getBtnCrear().addActionListener(e -> crearPersona());  
         
-        vista.getBtnConsultar().addActionListener(e -> {consultarPersona();});  
+        vista.getBtnConsultar().addActionListener(e -> consultarPersona());  
                 
-        vista.getBtnEditar().addActionListener(e -> {EditarPersona();});
+        vista.getBtnEditar().addActionListener(e -> EditarPersona());
         
-        vista.getBtnRemover().addActionListener(e -> {removerPersona();});  
+        vista.getBtnRemover().addActionListener(e -> removerPersona());  
         
         vista.getBtnImprimir().addActionListener(e -> {
             CargarDatosTabla();
@@ -84,13 +86,14 @@ public class ControladorPersonas {
                     JRadioButton escogido = String.valueOf(vista.getTbPersona().getValueAt(rowSelected, 5)).equals("Masculino")? vista.getRbMasculino(): vista.getRbFemenino();
                     escogido.setSelected(true);
                     vista.getTxtSueldo().setText(String.valueOf(vista.getTbPersona().getValueAt(rowSelected, 6)));
-                    vista.getSpCupo().setValue((int) vista.getTbPersona().getValueAt(rowSelected, 7));           
+                    vista.getSpCupo().setValue((int) vista.getTbPersona().getValueAt(rowSelected, 7));   
+                    
                     bytesPhoto = (byte[]) vista.getTbPersona().getValueAt(rowSelected, 8);
                     ImageIcon imageIcon = new ImageIcon(bytesPhoto);
                     Image image = imageIcon.getImage();
                     Image scaledImage = image.getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), Image.SCALE_DEFAULT);      
                     vista.getLbFoto().setIcon(new ImageIcon(scaledImage));
-                    
+           
                     vista.getTxtCorreo().setText(String.valueOf(vista.getTbPersona().getValueAt(rowSelected, 9)));
                     vista.getJdcFecha().setDate((java.util.Date) vista.getTbPersona().getValueAt(rowSelected, 10));
                     
@@ -103,7 +106,6 @@ public class ControladorPersonas {
         });
         
     }
-    
     
     
     public void CargarDatosTabla() {
@@ -157,14 +159,12 @@ public class ControladorPersonas {
         
         if (Validacion.validarCampos(vista)) {
             Persona nuevaPersona = extraerDatos();
-            if(modelo.crearPersona(nuevaPersona)) {
+            if(modelo.crearPersona(nuevaPersona)) {        
                 JOptionPane.showMessageDialog(vista, "GUARDADO CORRECTAMENTE");
                 CargarDatosTabla();
             } 
             LimpiarCampos();
-        }
-        
-        
+        }   
        
     }
     
@@ -202,9 +202,7 @@ public class ControladorPersonas {
             
         } else {
             JOptionPane.showMessageDialog(vista, "SELECCIONA UNA COLUMNA PARA EDITAR");
-        }
-    
-        
+        }    
     }
     
     private void consultarPersona() {
@@ -253,7 +251,7 @@ public class ControladorPersonas {
         auxPersona.setSexo(vista.getRbMasculino().isSelected()? "Masculino": "Femenino");
         auxPersona.setCupo((int) vista.getSpCupo().getValue());
         auxPersona.setSueldo(Double.parseDouble(vista.getTxtSueldo().getText()));
-        auxPersona.setFoto(bytesPhoto);
+        auxPersona.setFoto(vista.getLbFoto().getIcon() == null? iniciarPhoto(): bytesPhoto);
         auxPersona.setCorreo(vista.getTxtCorreo().getText());
         
         return auxPersona;
@@ -270,17 +268,21 @@ public class ControladorPersonas {
         } else {
             JOptionPane.showMessageDialog(vista, "DIGITE UN ID A PARA ELIMINAR");
         }
-        
+            
+    }
+    
+    public void crearCuentaUsuario() {
         
     }
     
-    public static void IniciarPhoto() {
+    public static byte[] iniciarPhoto() {
         try {
-                bytesPhoto = Files.readAllBytes(new File("C:\\Users\\Zhunio\\Pictures\\Estudio\\PGV\\MVC\\anonimo.png").toPath());
-            } catch (IOException ex) {
+                bytesPhoto = Files.readAllBytes(new File("C:\\Users\\Zhunio\\OneDrive\\Documentos\\NetBeansProjects\\MVC\\src\\mvc\\vista\\icons\\anonimo.png").toPath());
+                return bytesPhoto;
+        } catch (IOException ex) {
                 Logger.getLogger(ControladorPersonas.class.getName()).log(Level.SEVERE, null, ex);
+                return null;
             }
     }
-    
-    
+     
 }

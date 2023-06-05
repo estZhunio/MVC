@@ -21,7 +21,7 @@ public class ModeloPersona extends Persona{
         
     }
     public List<Persona> listaPersonas() {
-        List<Persona> listaPersonas = new ArrayList<Persona>();
+        List<Persona> listaPersonas = new ArrayList<>();
         String sql = "SELECT idpersona, nombres, apellidos, fechanacimiento, telefono, sexo, sueldo, cupo, foto, correo\n" +
 "	FROM public.\"Persona\";";
         ResultSet rs = cpg.consultaBD(sql);
@@ -63,8 +63,7 @@ public class ModeloPersona extends Persona{
         String sql = "SELECT idpersona, nombres, apellidos, fechanacimiento, telefono, sexo, sueldo, cupo, foto, correo\n" +
                     "FROM public.\"Persona\"\n" +
                     "WHERE idpersona = '"+ idpersona +"';";
-        ResultSet rs = cpg.consultaBD(sql);
-        
+        ResultSet rs = cpg.consultaBD(sql);   
         
         try {
             while(rs.next()) {
@@ -103,7 +102,7 @@ public class ModeloPersona extends Persona{
         return cpg.accionBD(sql);
     }
     
-    public String byteArrayToHex(byte[] bytes) {
+    public static String byteArrayToHex(byte[] bytes) {
     StringBuilder sb = new StringBuilder();
     for (byte b : bytes) {
         sb.append(String.format("%02X", b));
