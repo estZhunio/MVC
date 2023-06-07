@@ -20,62 +20,20 @@ public class VistaCompra extends javax.swing.JInternalFrame {
         initComponents();
     }
 
-    public JButton getBtnBuscar() {
+    public JButton getBtnBuscarPersona() {
         return btnBuscarPersona;
     }
 
-    public void setBtnBuscar(JButton btnBuscar) {
-        this.btnBuscarPersona = btnBuscar;
+    public void setBtnBuscarPersona(JButton btnBuscarPersona) {
+        this.btnBuscarPersona = btnBuscarPersona;
     }
 
-
-    public JPanel getPnOpciiones() {
-        return pnOpciiones;
+    public JButton getBtnBuscarProducto() {
+        return btnBuscarProducto;
     }
 
-    public void setPnOpciiones(JPanel pnOpciiones) {
-        this.pnOpciiones = pnOpciiones;
-    }
-
-
-    public JTable getTbProducto() {
-        return tbProducto;
-    }
-
-    public void setTbProducto(JTable tbProducto) {
-        this.tbProducto = tbProducto;
-    }
-
-    public JTextField getTxtId() {
-        return txtNombreProducto;
-    }
-
-    public void setTxtId(JTextField txtId) {
-        this.txtNombreProducto = txtId;
-    }
-
-    public JLabel getLbSubtotal() {
-        return lbSubtotal;
-    }
-
-    public void setLbSubtotal(JLabel lbSubtotal) {
-        this.lbSubtotal = lbSubtotal;
-    }
-
-    public JLabel getLbRuc() {
-        return lbRuc;
-    }
-
-    public void setLbRuc(JLabel lbRuc) {
-        this.lbRuc = lbRuc;
-    }
-
-    public JLabel getLbNombre() {
-        return lbNombre;
-    }
-
-    public void setLbNombre(JLabel lbNombre) {
-        this.lbNombre = lbNombre;
+    public void setBtnBuscarProducto(JButton btnBuscarProducto) {
+        this.btnBuscarProducto = btnBuscarProducto;
     }
 
     public JLabel getLbApellido() {
@@ -86,12 +44,44 @@ public class VistaCompra extends javax.swing.JInternalFrame {
         this.lbApellido = lbApellido;
     }
 
+    public JLabel getLbCodigoFactura() {
+        return lbCodigoFactura;
+    }
+
+    public void setLbCodigoFactura(JLabel lbCodigoFactura) {
+        this.lbCodigoFactura = lbCodigoFactura;
+    }
+
     public JLabel getLbFechaEmision() {
         return lbFechaEmision;
     }
 
     public void setLbFechaEmision(JLabel lbFechaEmision) {
         this.lbFechaEmision = lbFechaEmision;
+    }
+
+    public JLabel getLbNombre() {
+        return lbNombre;
+    }
+
+    public void setLbNombre(JLabel lbNombre) {
+        this.lbNombre = lbNombre;
+    }
+
+    public JLabel getLbRuc() {
+        return lbRuc;
+    }
+
+    public void setLbRuc(JLabel lbRuc) {
+        this.lbRuc = lbRuc;
+    }
+
+    public JLabel getLbSubtotal() {
+        return lbSubtotal;
+    }
+
+    public void setLbSubtotal(JLabel lbSubtotal) {
+        this.lbSubtotal = lbSubtotal;
     }
 
     public JLabel getLbTotal() {
@@ -102,13 +92,55 @@ public class VistaCompra extends javax.swing.JInternalFrame {
         this.lbTotal = lbTotal;
     }
 
-    public JPopupMenu getMenuOpciones() {
-        return menuOpciones;
+    public JPanel getPnDatosClientes() {
+        return pnDatosClientes;
     }
 
-    public void setMenuOpciones(JPopupMenu menuOpciones) {
-        this.menuOpciones = menuOpciones;
+    public void setPnDatosClientes(JPanel pnDatosClientes) {
+        this.pnDatosClientes = pnDatosClientes;
     }
+
+    public JPanel getPnOpciiones() {
+        return pnOpciiones;
+    }
+
+    public void setPnOpciiones(JPanel pnOpciiones) {
+        this.pnOpciiones = pnOpciiones;
+    }
+
+    public JTable getTbProducto() {
+        return tbProducto;
+    }
+
+    public void setTbProducto(JTable tbProducto) {
+        this.tbProducto = tbProducto;
+    }
+
+    public JTextField getTxtId() {
+        return txtId;
+    }
+
+    public void setTxtId(JTextField txtId) {
+        this.txtId = txtId;
+    }
+
+    public JTextField getTxtNombreProducto() {
+        return txtNombreProducto;
+    }
+
+    public void setTxtNombreProducto(JTextField txtNombreProducto) {
+        this.txtNombreProducto = txtNombreProducto;
+    }
+
+    public JButton getBtnCrearFactura() {
+        return btnCrearFactura;
+    }
+
+    public void setBtnCrearFactura(JButton btnCrearFactura) {
+        this.btnCrearFactura = btnCrearFactura;
+    }
+    
+    
     
 
     @SuppressWarnings("unchecked")
@@ -138,20 +170,18 @@ public class VistaCompra extends javax.swing.JInternalFrame {
         btnImprimir = new javax.swing.JButton();
         pnDatosClientes = new javax.swing.JPanel();
         lbApellido = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        btnEscoger = new javax.swing.JButton();
-        lbIdProducto2 = new javax.swing.JLabel();
+        lbCodigoFactura = new javax.swing.JLabel();
         lbIdProducto3 = new javax.swing.JLabel();
         lbIdProducto4 = new javax.swing.JLabel();
         lbIdProducto5 = new javax.swing.JLabel();
         lbIdProducto6 = new javax.swing.JLabel();
         lbIdProducto7 = new javax.swing.JLabel();
-        lbRuc = new javax.swing.JLabel();
         lbFechaEmision = new javax.swing.JLabel();
         lbTotal = new javax.swing.JLabel();
         lbNombre = new javax.swing.JLabel();
-        lbIdProducto13 = new javax.swing.JLabel();
+        lbRuc = new javax.swing.JLabel();
         lbIdProducto14 = new javax.swing.JLabel();
+        btnCrearFactura = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -243,15 +273,16 @@ public class VistaCompra extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(52, 52, 52)
+                        .addComponent(lbSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(254, 254, 254)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(txtNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -264,12 +295,12 @@ public class VistaCompra extends javax.swing.JInternalFrame {
                     .addComponent(txtNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscarProducto))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbSubtotal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
         );
 
         pnOpciiones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -314,70 +345,67 @@ public class VistaCompra extends javax.swing.JInternalFrame {
 
         lbApellido.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbApellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pnDatosClientes.add(lbApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 60, 330, 30));
+        pnDatosClientes.add(lbApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 70, 330, 30));
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Descripcion:");
-        pnDatosClientes.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 108, -1));
+        lbCodigoFactura.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lbCodigoFactura.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnDatosClientes.add(lbCodigoFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 410, 30));
 
-        btnEscoger.setText("Escoger");
-        pnDatosClientes.add(btnEscoger, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 330, -1, -1));
-
-        lbIdProducto2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lbIdProducto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pnDatosClientes.add(lbIdProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 410, 30));
-
-        lbIdProducto3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbIdProducto3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbIdProducto3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbIdProducto3.setText("RUC cliente:");
         pnDatosClientes.add(lbIdProducto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 160, -1));
 
-        lbIdProducto4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbIdProducto4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbIdProducto4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbIdProducto4.setText("Total de factura:");
         pnDatosClientes.add(lbIdProducto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, 170, -1));
 
-        lbIdProducto5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbIdProducto5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbIdProducto5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbIdProducto5.setText("Nombre del cliente:");
-        pnDatosClientes.add(lbIdProducto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 160, -1));
+        pnDatosClientes.add(lbIdProducto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 170, -1));
 
-        lbIdProducto6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbIdProducto6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbIdProducto6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbIdProducto6.setText("Fecha de emision:");
         pnDatosClientes.add(lbIdProducto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 160, -1));
 
-        lbIdProducto7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbIdProducto7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbIdProducto7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbIdProducto7.setText("Apellido del cliente:");
-        pnDatosClientes.add(lbIdProducto7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, 160, -1));
-
-        lbRuc.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbRuc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pnDatosClientes.add(lbRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 330, 30));
+        pnDatosClientes.add(lbIdProducto7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, 170, -1));
 
         lbFechaEmision.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbFechaEmision.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnDatosClientes.add(lbFechaEmision, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 100, 330, 30));
 
-        lbTotal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbTotal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnDatosClientes.add(lbTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 330, 30));
 
         lbNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pnDatosClientes.add(lbNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 330, 30));
+        pnDatosClientes.add(lbNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 330, 30));
 
-        lbIdProducto13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbIdProducto13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pnDatosClientes.add(lbIdProducto13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 330, 30));
+        lbRuc.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbRuc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnDatosClientes.add(lbRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 330, 30));
 
         lbIdProducto14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lbIdProducto14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbIdProducto14.setText("No. de Factura:");
-        pnDatosClientes.add(lbIdProducto14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 180, -1));
+        pnDatosClientes.add(lbIdProducto14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 180, -1));
 
-        pnOpciiones.add(pnDatosClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1380, 200));
+        btnCrearFactura.setText("Crear");
+        btnCrearFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearFacturaActionPerformed(evt);
+            }
+        });
+        pnDatosClientes.add(btnCrearFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 150, 120, 40));
+
+        pnOpciiones.add(pnDatosClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1380, 210));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -416,6 +444,10 @@ public class VistaCompra extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnImprimirActionPerformed
 
+    private void btnCrearFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearFacturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCrearFacturaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgSexo;
@@ -423,23 +455,21 @@ public class VistaCompra extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscarProducto;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnCrear;
+    private javax.swing.JButton btnCrearFactura;
     private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnEscoger;
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnRemover;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbApellido;
+    private javax.swing.JLabel lbCodigoFactura;
     private javax.swing.JLabel lbFechaEmision;
-    private javax.swing.JLabel lbIdProducto13;
     private javax.swing.JLabel lbIdProducto14;
-    private javax.swing.JLabel lbIdProducto2;
     private javax.swing.JLabel lbIdProducto3;
     private javax.swing.JLabel lbIdProducto4;
     private javax.swing.JLabel lbIdProducto5;

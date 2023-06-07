@@ -49,7 +49,7 @@ public class ControladorProducto {
        
         vista.getBtnCrear().addActionListener(e -> crearProducto());  
         
-        vista.getBtnConsultar().addActionListener(e -> consultarPersona());  
+        vista.getBtnConsultar().addActionListener(e -> consultarProducto());  
                 
         vista.getBtnEditar().addActionListener(e -> EditarProducto());
         
@@ -141,7 +141,6 @@ public class ControladorProducto {
                 if (modelo.editarProducto(productoEditar)) {
                     CargarDatosTabla();
                     LimpiarCampos();
-                    // vista.getTxtId().setEditable(true);
                     JOptionPane.showMessageDialog(vista, "EDITADO CORRECTAMENTE");
                 } else {
                     JOptionPane.showMessageDialog(vista, "OCURRIO UN PERCANCE, VERIFIQUE QUE TODOS LOS CAMPOS");
@@ -153,7 +152,7 @@ public class ControladorProducto {
         }    
     }
         
-    private void consultarPersona() {
+    private void consultarProducto() {
         modeloTabla.setColumnIdentifiers(new String[] {"Id", "Nombre", "Precio", "Cantidad", "Foto", "Descripcion", "Fecha de publicacion"});
         modeloTabla.setRowCount(0);
         if (!vista.getTxtNombre().getText().equals("")) {
@@ -205,7 +204,7 @@ public class ControladorProducto {
     
     public Producto extraerDatos() {
         Producto auxProducto = new Producto(); 
-        auxProducto.setIdProducto(vista.getTxtId().getText() == null?Integer.parseInt(vista.getTxtId().getText()): 0);
+        auxProducto.setIdProducto(vista.getTxtId().getText() != null ? Integer.parseInt(vista.getTxtId().getText()) : 0);
         auxProducto.setNombre(vista.getTxtNombre().getText());
         auxProducto.setPrecio(Double.valueOf(vista.getTxtPrecio().getText()));
         auxProducto.setFechaPublicacion(new java.sql.Date(System.currentTimeMillis()));
