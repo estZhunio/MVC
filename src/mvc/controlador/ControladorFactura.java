@@ -1,16 +1,15 @@
 package mvc.controlador;
 
-import java.awt.Image;
 import java.text.DecimalFormat;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import javax.swing.ImageIcon;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
-import static mvc.controlador.ControladorProducto.bytesPhoto;
 import mvc.modelo.DetalleFactura;
 import mvc.modelo.EncabezadoFactura;
 import mvc.modelo.ModeloFactura;
@@ -19,6 +18,7 @@ import mvc.modelo.ModeloProducto;
 import mvc.modelo.Persona;
 import mvc.modelo.Producto;
 import mvc.vista.VistaCompra;
+import mvc.vista.VistaReporte;
 
 /**
  * @author Zhunio
@@ -43,6 +43,7 @@ public class ControladorFactura {
         vista.getBtnBuscarPersona().addActionListener(l -> buscarPersona());
         vista.getBtnBuscarProducto().addActionListener(l -> agregaProductoProducto());
         vista.getBtnCrearFactura().addActionListener(l -> crearFactura());
+        vista.getBtnLimpiar().addActionListener(l -> limpiarCampos());
         modeloTabla.addTableModelListener(new TableModelListener() {
             @Override
             public void tableChanged(TableModelEvent e) {
@@ -147,11 +148,28 @@ public class ControladorFactura {
         
         if (error) {
             JOptionPane.showMessageDialog(null, "GUARDADO CORRECTAMENTE");
+            limpiarCampos();
         } else {
             modeloFactura.removerEncabezadoFactura(Integer.parseInt(vista.getLbCodigoFactura().getText()));
             JOptionPane.showMessageDialog(null, "ERROR --> NO SE PUDO COMPLETAR LA ACCION DE GUARDAR");
         }
      
-    }  
+    } 
+    
+   public void limpiarCampos() {    
+       vista.getLbCodigoFactura().setText("");
+       vista.getLbRuc().setText("");
+       vista.getLbNombre().setText("");
+       vista.getLbApellido().setText("");
+       vista.getLbSubtotal().setText("");
+       vista.getLbTotal().setText("");
+       vista.getLbFechaEmision().setText("");
+       vista.getTxtId().setText("");
+       vista.getTxtNombreProducto().setText("");
+       modeloTabla.setRowCount(0);
+       vista.getTbProducto().setModel(modeloTabla);
+   }
+    
+    
     
 }

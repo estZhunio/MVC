@@ -139,9 +139,15 @@ public class VistaCompra extends javax.swing.JInternalFrame {
     public void setBtnCrearFactura(JButton btnCrearFactura) {
         this.btnCrearFactura = btnCrearFactura;
     }
-    
-    
-    
+
+    public JButton getBtnLimpiar() {
+        return btnLimpiar;
+    }
+
+    public void setBtnLimpiar(JButton btnLimpiar) {
+        this.btnLimpiar = btnLimpiar;
+    }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -181,7 +187,9 @@ public class VistaCompra extends javax.swing.JInternalFrame {
         lbNombre = new javax.swing.JLabel();
         lbRuc = new javax.swing.JLabel();
         lbIdProducto14 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         btnCrearFactura = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -267,11 +275,12 @@ public class VistaCompra extends javax.swing.JInternalFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1358, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1358, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(52, 52, 52)
                         .addComponent(lbSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,12 +304,12 @@ public class VistaCompra extends javax.swing.JInternalFrame {
                     .addComponent(txtNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscarProducto))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23))
+                .addGap(24, 24, 24))
         );
 
         pnOpciiones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -345,7 +354,7 @@ public class VistaCompra extends javax.swing.JInternalFrame {
 
         lbApellido.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbApellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pnDatosClientes.add(lbApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 70, 330, 30));
+        pnDatosClientes.add(lbApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 70, 290, 30));
 
         lbCodigoFactura.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lbCodigoFactura.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -378,11 +387,11 @@ public class VistaCompra extends javax.swing.JInternalFrame {
 
         lbFechaEmision.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbFechaEmision.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pnDatosClientes.add(lbFechaEmision, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 100, 330, 30));
+        pnDatosClientes.add(lbFechaEmision, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 100, 290, 30));
 
         lbTotal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pnDatosClientes.add(lbTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 330, 30));
+        pnDatosClientes.add(lbTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 270, 30));
 
         lbNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -397,13 +406,46 @@ public class VistaCompra extends javax.swing.JInternalFrame {
         lbIdProducto14.setText("No. de Factura:");
         pnDatosClientes.add(lbIdProducto14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 180, -1));
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Opciones"));
+
         btnCrearFactura.setText("Crear");
         btnCrearFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCrearFacturaActionPerformed(evt);
             }
         });
-        pnDatosClientes.add(btnCrearFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 150, 120, 40));
+
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnCrearFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(btnCrearFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
+        );
+
+        pnDatosClientes.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 180, 190));
 
         pnOpciiones.add(pnDatosClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1380, 210));
 
@@ -448,6 +490,10 @@ public class VistaCompra extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCrearFacturaActionPerformed
 
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgSexo;
@@ -458,11 +504,13 @@ public class VistaCompra extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCrearFactura;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnImprimir;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRemover;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;

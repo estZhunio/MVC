@@ -7,6 +7,7 @@ import mvc.vista.MenuPrincipal;
 import mvc.vista.VistaCompra;
 import mvc.vista.VistaPersona;
 import mvc.vista.VistaProducto;
+import mvc.vista.VistaReporte;
 
 
 
@@ -28,6 +29,7 @@ public class ControladorMenuPrincipal {
         menuPrincipal.getMnMantenimientoClientes().addActionListener(l -> mostrarMenuPersona());
         menuPrincipal.getMnMantenimientoProductos().addActionListener(l -> mostrarMenuProducto());
         menuPrincipal.getMnCompra().addActionListener(l -> mostrarMenuComprar());
+        menuPrincipal.getMnReportes().addActionListener(l -> mostrarMenuReporte());
               
     }
     
@@ -53,6 +55,14 @@ public class ControladorMenuPrincipal {
         ModeloFactura modeloFactura = new ModeloFactura();
         menuPrincipal.getPnInternalFrame().add(vistaCompra);
         ControladorFactura controlador = new ControladorFactura(vistaCompra, modeloFactura);  
+    }
+    
+    public void mostrarMenuReporte() {
+        menuPrincipal.getPnInternalFrame().removeAll();
+        VistaReporte vistaFactura =  new VistaReporte();
+        ModeloFactura modeloFactura = new ModeloFactura();
+        menuPrincipal.getPnInternalFrame().add(vistaFactura);
+        ControladorReporte controlador = new ControladorReporte(vistaFactura, modeloFactura);  
     }
     
     

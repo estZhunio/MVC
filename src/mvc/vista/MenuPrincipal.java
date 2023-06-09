@@ -1,5 +1,6 @@
 package mvc.vista;
 
+import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
@@ -48,6 +49,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public void setMnCompra(JMenuItem mnCompra) {
         this.mnCompra = mnCompra;
     }
+
+    public JMenuItem getMnReportes() {
+        return mnReportes;
+    }
+
+    public void setMnReportes(JMenuItem mnReportes) {
+        this.mnReportes = mnReportes;
+    }
     
     
     @SuppressWarnings("unchecked")
@@ -60,11 +69,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mnMantenimientoClientes = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         mnMantenimientoProductos = new javax.swing.JMenuItem();
         mnCompra = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        mnReporte = new javax.swing.JMenu();
+        mnReportes = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -109,9 +118,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(mnMantenimientoClientes);
 
-        jMenuItem3.setText("jMenuItem3");
-        jMenu1.add(jMenuItem3);
-
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Productos");
@@ -124,8 +130,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Reportes");
-        jMenuBar1.add(jMenu3);
+        mnReporte.setText("Reportes");
+
+        mnReportes.setText("Enlistar reportes");
+        mnReporte.add(mnReportes);
+
+        jMenuBar1.add(mnReporte);
 
         jMenu4.setText("Ayuda");
         jMenuBar1.add(jMenu4);
@@ -158,15 +168,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JMenuItem mnCompra;
     private javax.swing.JMenuItem mnMantenimientoClientes;
     private javax.swing.JMenuItem mnMantenimientoProductos;
+    private javax.swing.JMenu mnReporte;
+    private javax.swing.JMenuItem mnReportes;
     private javax.swing.JPanel pnInternalFrame;
     // End of variables declaration//GEN-END:variables
 }
