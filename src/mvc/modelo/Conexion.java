@@ -14,6 +14,15 @@ import javax.swing.JOptionPane;
  * @author Zhunio
  */
 public class Conexion {
+
+    public Connection getCon() {
+        return con;
+    }
+
+    public void setCon(Connection con) {
+        this.con = con;
+    }
+    
     Connection con;
     
     String cadenaConexion = "jdbc:postgresql://localhost:5432/MVC";
@@ -55,7 +64,7 @@ public class Conexion {
         try {
             Statement st = con.createStatement();
             st.execute(sql);
-            // con.close();
+            con.close();
             return true;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);

@@ -85,7 +85,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="880" y="30" width="250" height="300"/>
+                  <AbsoluteConstraints x="880" y="30" width="250" height="330"/>
                 </Constraint>
               </Constraints>
 
@@ -100,6 +100,7 @@
                               <Component id="btnEditar" alignment="1" pref="228" max="32767" attributes="0"/>
                               <Component id="btnConsultar" alignment="0" pref="228" max="32767" attributes="0"/>
                               <Component id="btnImprimir" alignment="1" pref="228" max="32767" attributes="0"/>
+                              <Component id="btnReporte" alignment="1" pref="228" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -116,9 +117,11 @@
                           <Component id="btnEditar" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btnRemover" min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace pref="13" max="32767" attributes="0"/>
+                          <Component id="btnReporte" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btnImprimir" min="-2" pref="38" max="-2" attributes="0"/>
-                          <EmptySpace pref="27" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -155,10 +158,18 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnImprimir">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Cargar todos los datos"/>
+                    <Property name="text" type="java.lang.String" value="Reporte condicional"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnImprimirActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnReporte">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Reporte basico"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReporteActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2023-06-26T19:00:10 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Persona_MVC" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="71e4659f-8233-4fce-87c1-a57c443ba42b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="IlBlcnNvbmEiIEFTICwxNTksMTA2LDExZmM4NDRkLWYwNmYtNDQ2OS1iMjc5LTRjZjQ4YTQ5MjE0Yjs="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MVC"/>
+	<queryString>
+		<![CDATA[SELECT "Persona".idpersona,
+	"Persona".nombres,
+	"Persona".apellidos,
+	"Persona".fechanacimiento,
+	"Persona".telefono,
+	"Persona".sexo,
+	"Persona".sueldo,
+	"Persona".cupo,
+	"Persona".foto,
+	"Persona".correo
+FROM "Persona"]]>
+	</queryString>
+	<field name="idpersona" class="java.lang.String"/>
+	<field name="nombres" class="java.lang.String"/>
+	<field name="apellidos" class="java.lang.String"/>
+	<field name="fechanacimiento" class="java.sql.Date"/>
+	<field name="telefono" class="java.lang.String"/>
+	<field name="sexo" class="java.lang.String"/>
+	<field name="sueldo" class="java.math.BigDecimal"/>
+	<field name="cupo" class="java.lang.Integer"/>
+	<field name="foto" class="java.lang.Object"/>
+	<field name="correo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="90" y="20" width="399" height="30" forecolor="#2B9CD9" uuid="f0be39e7-b15c-4b52-99e4-b44fc2ba3f03"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Personas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="31" width="100" height="30" uuid="96bacef1-789a-436b-a100-2e66e0e7e396"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[idpersona]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="31" width="100" height="30" uuid="789cd353-c9f1-4519-8dbb-5c403af75a9f"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="31" width="100" height="30" uuid="f2eb62b8-18b8-4fcc-ab94-db659d73d2a6"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[fechanacimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="31" width="100" height="30" uuid="246280f8-25c1-48e9-9822-f84264af88ef"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="31" width="80" height="30" uuid="78629b0f-0975-4cfa-9584-8b1a4b78ed45"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="31" width="80" height="30" uuid="1070a8d5-4cd7-4256-a088-04bd57beb876"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="dd02c5f4-76bc-4ffd-9c42-64bac281b83d"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{idpersona}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="30" uuid="314f4ce7-17fb-4f31-8cae-025b9789d0e5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="30" uuid="75e8a92c-525d-4c24-b0ed-117886d224c6"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="30" uuid="fbfda32c-ed48-45e0-8b73-0156905d2e30"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed" lineColor="#1A1717"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fechanacimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="80" height="30" uuid="c281ca3f-5507-4599-846f-964988951ea5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Dashed"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="80" height="30" uuid="f78d8a8e-713c-4541-a9a5-a05fcf434614"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Dashed"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

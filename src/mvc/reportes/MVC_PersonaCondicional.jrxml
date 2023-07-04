@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2023-06-27T15:33:37 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MVC_PersonaCondicional" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1ab6dafa-062c-473b-9287-91b22978428e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MVC"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="IlBlcnNvbmEiIEFTICwxMDAsOTAsNGJmMzczZGQtNDdmZC00Nzg0LThjN2EtZTM2ODU0OTU5ZjRkOw=="/>
+	<style name="h1" forecolor="#1D6CF5" backcolor="#E63F3C" hTextAlign="Center" vTextAlign="Middle" fontSize="30" isBold="true"/>
+	<style name="CabeceraTabla" forecolor="#48AB65" hTextAlign="Center" vTextAlign="Middle" fontSize="11" isBold="true">
+		<box>
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#22D2F5"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#22D2F5"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#22D2F5"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#22D2F5"/>
+		</box>
+	</style>
+	<style name="CuerpoTabla" hTextAlign="Center" vTextAlign="Middle">
+		<box>
+			<topPen lineWidth="1.0" lineStyle="Dashed"/>
+			<leftPen lineWidth="1.0" lineStyle="Dashed"/>
+			<bottomPen lineWidth="1.0" lineStyle="Dashed"/>
+			<rightPen lineWidth="1.0" lineStyle="Dashed"/>
+		</box>
+		<paragraph lineSpacing="1_1_2"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{cupo}>$P{maximo}]]></conditionExpression>
+			<style forecolor="#ED120E">
+				<box>
+					<topPen lineColor="#0F0E0E"/>
+					<leftPen lineColor="#0F0E0E"/>
+					<bottomPen lineColor="#0F0E0E"/>
+					<rightPen lineColor="#0F0E0E"/>
+				</box>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{cupo}<$P{minimo}]]></conditionExpression>
+			<style forecolor="#1536ED">
+				<box>
+					<topPen lineColor="#0E0E0F"/>
+					<leftPen lineColor="#0E0E0F"/>
+					<bottomPen lineColor="#0E0E0F"/>
+					<rightPen lineColor="#0E0E0F"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="TextoEstaticos" hTextAlign="Center" vTextAlign="Middle" isBold="true"/>
+	<parameter name="RutaImagen" class="java.lang.String">
+		<parameterDescription><![CDATA[Aqui va ir la imagen que se colocara en el reporte]]></parameterDescription>
+	</parameter>
+	<parameter name="TituloReporte" class="java.lang.String"/>
+	<parameter name="maximo" class="java.lang.Integer">
+		<parameterDescription><![CDATA[Indicar el maximo de cupo que tiene una persona]]></parameterDescription>
+	</parameter>
+	<parameter name="minimo" class="java.lang.Integer">
+		<parameterDescription><![CDATA[El minimo de cupos que debe tener una persona]]></parameterDescription>
+	</parameter>
+	<parameter name="Responsable" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT "Persona".foto,
+	"Persona".correo,
+	"Persona".cupo,
+	"Persona".sueldo,
+	"Persona".sexo,
+	"Persona".telefono,
+	"Persona".fechanacimiento,
+	"Persona".apellidos,
+	"Persona".nombres,
+	"Persona".idpersona
+FROM "Persona"]]>
+	</queryString>
+	<field name="foto" class="java.lang.Object"/>
+	<field name="correo" class="java.lang.String"/>
+	<field name="cupo" class="java.lang.Integer"/>
+	<field name="sueldo" class="java.math.BigDecimal"/>
+	<field name="sexo" class="java.lang.String"/>
+	<field name="telefono" class="java.lang.String"/>
+	<field name="fechanacimiento" class="java.sql.Date"/>
+	<field name="apellidos" class="java.lang.String"/>
+	<field name="nombres" class="java.lang.String"/>
+	<field name="idpersona" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<image>
+				<reportElement x="20" y="0" width="460" height="90" uuid="1e8351bd-ece9-41a1-a300-b5823cc8eb14"/>
+				<imageExpression><![CDATA[$P{RutaImagen}]]></imageExpression>
+			</image>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="480" y="0" width="92" height="30" uuid="5e912fe8-3cc4-47a7-98df-bf4e679ba8b9"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement style="h1" x="0" y="0" width="550" height="60" uuid="c9e3a7a0-de91-400a-8ab1-a489672a9851"/>
+				<textFieldExpression><![CDATA[$P{TituloReporte}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="0" y="30" width="70" height="30" uuid="da592243-b279-4418-abc7-369f9ced7cba"/>
+				<text><![CDATA[idpersona]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="70" y="30" width="70" height="30" uuid="0a8ee8e4-d3ad-4e05-a11d-0dbdd794ddde"/>
+				<text><![CDATA[nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="140" y="30" width="70" height="30" uuid="58363ef7-6691-4f57-a58d-b5a6e796e2ae"/>
+				<text><![CDATA[apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="210" y="30" width="90" height="30" uuid="885371f3-3122-4fa4-a27a-ee450b64ec6d"/>
+				<text><![CDATA[fechanacimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="300" y="30" width="60" height="30" uuid="4c3a7699-ae8b-42c1-9790-01ce18a35599"/>
+				<text><![CDATA[sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="360" y="30" width="60" height="30" uuid="7e1ac3b8-52b3-457d-b6b3-256e3fbf0596"/>
+				<text><![CDATA[telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="420" y="30" width="90" height="30" uuid="3f42a22e-eb32-41c9-869a-eee9e74f55ab"/>
+				<text><![CDATA[correo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="510" y="30" width="50" height="30" uuid="7cc0648e-3478-4f60-92d9-5edef1cdbb72"/>
+				<text><![CDATA[cupo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="0" width="300" height="30" uuid="1a176df4-60c2-4eec-8c49-1543870d4cb4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Responsable}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="TextoEstaticos" x="80" y="0" width="100" height="30" uuid="f974a8e8-9484-49f1-b817-9dc72721caa0"/>
+				<text><![CDATA[Responsable:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement style="CuerpoTabla" x="0" y="0" width="70" height="30" uuid="d6661820-239f-4600-872b-c94822a0f3d2"/>
+				<textFieldExpression><![CDATA[$F{idpersona}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="CuerpoTabla" x="70" y="0" width="70" height="30" uuid="1f5624ce-e709-4bd1-b309-4df7ac7a5258"/>
+				<textFieldExpression><![CDATA[$F{nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="CuerpoTabla" x="140" y="0" width="70" height="30" uuid="54c352df-3907-4f93-a3ee-71d778e8a9e1"/>
+				<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="CuerpoTabla" x="210" y="0" width="90" height="30" uuid="c3b4da6a-dd06-4803-aaef-95626e33b635"/>
+				<textFieldExpression><![CDATA[$F{fechanacimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="CuerpoTabla" x="300" y="0" width="60" height="30" uuid="9ffc3feb-6b8e-4687-8821-f7cae3a82a8a"/>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="CuerpoTabla" x="360" y="0" width="60" height="30" uuid="3dcd4438-1aae-49c9-ab76-f6f198357068"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="CuerpoTabla" x="420" y="0" width="90" height="30" uuid="adbc8b8e-16fd-4066-a205-77fc41c35bc2"/>
+				<textFieldExpression><![CDATA[$F{correo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="CuerpoTabla" x="510" y="0" width="50" height="30" uuid="45ea497f-c032-4bfb-abca-62a37b1d4d8b"/>
+				<textFieldExpression><![CDATA[$F{cupo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="0" y="0" width="70" height="30" uuid="b1045c9e-2fa2-44b9-8905-fd23f56e96ea"/>
+				<text><![CDATA[idpersona]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="70" y="0" width="70" height="30" uuid="766de55d-7873-42bf-9647-67b3d902e125"/>
+				<text><![CDATA[nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="140" y="0" width="70" height="30" uuid="bc37c14e-d614-40cc-b9e0-771cbf5e1a32"/>
+				<text><![CDATA[apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="210" y="0" width="90" height="30" uuid="cd3879ec-5eb4-46be-9d5f-674302cec335"/>
+				<text><![CDATA[fechanacimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="300" y="0" width="60" height="30" uuid="b1172194-91d1-43ba-8f4f-168100703ee2"/>
+				<text><![CDATA[sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="360" y="0" width="60" height="30" uuid="ea9b2634-9798-4635-8be4-7aef112c6350"/>
+				<text><![CDATA[telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="420" y="0" width="90" height="30" uuid="6b860712-fe76-4eed-b674-89a6dbdf8856"/>
+				<text><![CDATA[correo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="CabeceraTabla" positionType="FixRelativeToBottom" x="510" y="0" width="50" height="30" uuid="d4d214a1-5208-45da-b1f4-b99750da01e3"/>
+				<text><![CDATA[cupo]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="10" y="20" width="540" height="1" uuid="82f0d5d2-043a-44e3-af39-efdcac26a62f"/>
+			</line>
+			<staticText>
+				<reportElement x="-21" y="24" width="592" height="30" uuid="eb25572c-0410-4186-9c4c-59afae42eb3e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Ave. Americas y Solano]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

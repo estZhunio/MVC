@@ -109,7 +109,7 @@ public class VistaReporte extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Ordenar por:");
 
-        cbOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Recientes", "Antiguas" }));
+        cbOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Antiguas", "Recientes" }));
 
         btnEliminar.setText("Eliminar");
 

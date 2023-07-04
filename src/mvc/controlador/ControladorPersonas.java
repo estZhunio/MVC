@@ -9,7 +9,9 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -17,11 +19,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import mvc.modelo.Conexion;
 import mvc.modelo.ModeloPersona;
 import mvc.modelo.Persona;
+import mvc.vista.IngresoParametrosReporte;
 import mvc.vista.VistaPersona;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
  
 
@@ -60,12 +71,12 @@ public class ControladorPersonas {
                 
         vista.getBtnEditar().addActionListener(e -> EditarPersona());
         
-        vista.getBtnRemover().addActionListener(e -> removerPersona());  
+        vista.getBtnRemover().addActionListener(e -> removerPersona()); 
+        
+        vista.getBtnReporte().addActionListener(l -> reportePersona());
         
         vista.getBtnImprimir().addActionListener(e -> {
-            CargarDatosTabla();
-            LimpiarCampos();
-            vista.getTxtId().setEditable(true);
+            reporteCondicional();
         });  
         
         vista.getTbPersona().getSelectionModel().addListSelectionListener( e -> {
@@ -271,13 +282,30 @@ public class ControladorPersonas {
             
     }
     
-    public void crearCuentaUsuario() {
-        
+    public void reportePersona() {
+        Conexion conectar = new Conexion();
+        try {
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/mvc/reportes/Persona_MVC.jasper"));
+            Map<String, Object> params = new HashMap<String, Object>();
+            String aguja = vista.getTxtId().getText();
+            params.put("idpersona", aguja);
+            JasperPrint jp = JasperFillManager.fillReport(jr, params, conectar.getCon());
+            JasperViewer pv = new JasperViewer(jp, false);
+            pv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            pv.setVisible(true);
+        } catch (JRException ex) {
+            Logger.getLogger(ControladorPersonas.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+    
+    public void reporteCondicional(){
+        ControladorParametroReporte controlador = new ControladorParametroReporte(new IngresoParametrosReporte());
+    }    
+
     
     public static byte[] iniciarPhoto() {
         try {
-                bytesPhoto = Files.readAllBytes(new File("C:\\Users\\Zhunio\\OneDrive\\Documentos\\NetBeansProjects\\MVC\\src\\mvc\\vista\\icons\\anonimo.png").toPath());
+                bytesPhoto = Files.readAllBytes(new File("../mvc/icons/anonimo.png").toPath());
                 return bytesPhoto;
         } catch (IOException ex) {
                 Logger.getLogger(ControladorPersonas.class.getName()).log(Level.SEVERE, null, ex);

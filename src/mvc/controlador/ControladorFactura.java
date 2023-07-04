@@ -19,7 +19,7 @@ import mvc.modelo.Persona;
 import mvc.modelo.Producto;
 import mvc.vista.VistaCompra;
 import mvc.vista.VistaReporte;
-
+ 
 /**
  * @author Zhunio
  */
@@ -75,7 +75,6 @@ public class ControladorFactura {
     
     public void buscarPersona() {
         Persona comprador = new ModeloPersona().consultarPersona(vista.getTxtId().getText());
-        System.out.println("El id que ingresastes es --> " + vista.getTxtId().getText());
         
         if (comprador != null) {
             vista.getLbCodigoFactura().setText(String.valueOf(modeloFactura.extraerUltimaFactura() + 1));

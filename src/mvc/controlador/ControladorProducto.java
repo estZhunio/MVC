@@ -204,7 +204,7 @@ public class ControladorProducto {
     
     public Producto extraerDatos() {
         Producto auxProducto = new Producto(); 
-        auxProducto.setIdProducto(vista.getTxtId().getText() != null ? Integer.parseInt(vista.getTxtId().getText()) : 0);
+        // auxProducto.setIdProducto(vista.getTxtId().getText() != null ? Integer.parseInt(vista.getTxtId().getText()) : 0);
         auxProducto.setNombre(vista.getTxtNombre().getText());
         auxProducto.setPrecio(Double.valueOf(vista.getTxtPrecio().getText()));
         auxProducto.setFechaPublicacion(new java.sql.Date(System.currentTimeMillis()));
@@ -246,7 +246,7 @@ public class ControladorProducto {
    
     public static byte[] IniciarPhoto() {
         try {
-                bytesPhoto = Files.readAllBytes(new File("C:\\Users\\Zhunio\\OneDrive\\Documentos\\NetBeansProjects\\MVC\\src\\mvc\\vista\\icons\\productoAnonimo.jpg").toPath());
+                bytesPhoto = Files.readAllBytes(new File("/icons/productoAnonimo.jpg").toPath());
                 return bytesPhoto;
         } catch (IOException ex) {
                 Logger.getLogger(ControladorPersonas.class.getName()).log(Level.SEVERE, null, ex);
